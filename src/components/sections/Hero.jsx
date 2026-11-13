@@ -37,7 +37,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 sm:pt-36 lg:pt-36 pb-12 overflow-hidden flex flex-col justify-between bg-white bg-clean-grid"
+      className="relative pt-28 sm:pt-32 pb-12 overflow-hidden flex flex-col justify-between bg-white bg-clean-grid"
     >
       {/* Background Soft Blue Atmosphere */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[600px] h-[600px] bg-sky-100/60 rounded-full blur-[140px] pointer-events-none" />

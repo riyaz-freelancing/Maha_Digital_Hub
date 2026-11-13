@@ -64,18 +64,18 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/90 py-4 shadow-md"
-          : "bg-white/90 backdrop-blur-md py-5 sm:py-6 border-b border-slate-200/60"
+          ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/90 py-2.5 shadow-sm"
+          : "bg-white/90 backdrop-blur-md py-3 sm:py-3.5 border-b border-slate-200/60"
       }`}
     >
       <div className="container-wide">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4 lg:gap-6">
           
-          {/* Brand Logo (Enlarged) */}
+          {/* Brand Logo */}
           <Logo size="large" onClick={() => scrollTo("#home")} />
 
-          {/* Desktop Navigation Links (Enlarged & Prominent) */}
-          <nav className="hidden xl:flex items-center gap-1.5 bg-slate-100/90 border border-slate-200/80 rounded-full px-4 py-2 backdrop-blur-md shadow-inner">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-1 2xl:gap-1.5 bg-slate-100/90 border border-slate-200/80 rounded-full px-2.5 py-1.5 2xl:px-3.5 2xl:py-2 backdrop-blur-md shadow-inner shrink-0">
             {NAV_LINKS.map((link) => {
               const targetId = link.href.substring(1)
               const isActive = activeSection === targetId
@@ -88,9 +88,9 @@ export function Navbar() {
                     e.preventDefault()
                     scrollTo(link.href)
                   }}
-                  className={`px-4 py-2 text-sm font-bold rounded-full transition-all duration-200 ${
+                  className={`px-3 py-1.5 2xl:px-4 2xl:py-2 text-xs 2xl:text-sm font-bold rounded-full transition-all duration-200 whitespace-nowrap ${
                     isActive
-                      ? "text-slate-950 bg-amber-400 font-extrabold shadow-md scale-[1.02]"
+                      ? "text-slate-950 bg-amber-400 font-extrabold shadow-sm scale-[1.02]"
                       : "text-slate-700 hover:text-slate-950 hover:bg-white"
                   }`}
                 >
@@ -101,7 +101,7 @@ export function Navbar() {
           </nav>
 
           {/* Right Action Controls */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center shrink-0">
             {/* WhatsApp Button */}
             <a
               href={`https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent(
@@ -112,17 +112,17 @@ export function Navbar() {
             >
               <Button
                 variant="whatsapp"
-                size="lg"
-                className="gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm uppercase tracking-wider shadow-md px-6 py-2.5 h-11"
+                size="default"
+                className="gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs 2xl:text-sm uppercase tracking-wider shadow-sm px-4 2xl:px-5 py-2 h-10 shrink-0"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp</span>
+                <MessageCircle className="w-4 h-4 shrink-0" />
+                <span className="whitespace-nowrap">WhatsApp</span>
               </Button>
             </a>
           </div>
 
           {/* Mobile Sheet Trigger */}
-          <div className="flex items-center gap-2 xl:hidden">
+          <div className="flex items-center gap-2 xl:hidden shrink-0">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <Button
